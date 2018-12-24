@@ -77,6 +77,7 @@ class UserController extends AppController
                 ];
             }
         }
+        $data['hidemenu'] = !$this->isLogged();
         $data['messages'] = $messages;
         $this->render('user/login', $data);
     }

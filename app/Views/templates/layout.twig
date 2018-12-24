@@ -19,6 +19,7 @@
 
 <body>
 <header>
+    {% if not(hidemenu) %}
     <!--Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="index.php?p=contact.index">Accueil</a>
@@ -48,6 +49,7 @@
         </div>
     </nav>
     <!--/.Navbar -->
+    {% endif %}
 </header>
 <main role="main">
     <div class="container">
