@@ -60,7 +60,7 @@ class MysqlDatabase extends Database
     {
 
         if ($this->pdo === null) {
-            $pdo = new PDO('mysql:dbname=crm;host=' . $this->db_host, $this->db_user, $this->db_pass);
+            $pdo = new PDO('mysql:dbname=' . $this->db_name .';host=' . $this->db_host, $this->db_user, $this->db_pass);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             $this->pdo = $pdo;
         }
