@@ -1,0 +1,21 @@
+{
+    "name": "crm/app",
+    "authors": [
+        {
+            "name": "Rachid TOUHAMI",
+            "email": "r.touhami90@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "twig/twig": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "7"
+    },
+    "autoload": {
+        "psr-4": {
+          "App\\" : "./"
+        }
+    }
+}

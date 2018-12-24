@@ -1,0 +1,33 @@
+{% extends 'templates/layout.twig' %}
+{% block content %}
+    <p class="h4 mb-4">Ajouter une nouvelle adresse</p>
+    <form method="post" action="index.php?p=address.edit">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Numéro et libellé de la voie :</label>
+            <input value="{{ address.address_1 }}" type="text" name="address_1" class="form-control" id="" placeholder="1 Rue ...">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Complement d'adresse :</label>
+            <input value="{{ address.address_2 }}" type="text" name="address_2" class="form-control" id="" placeholder="Bat ..., Appt">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Ville :</label>
+            <input value="{{ address.city }}" type="text" name="city" class="form-control" id="" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Code postale :</label>
+            <input value="{{ address.zipcode }}" type="text" name="zipcode" class="form-control" id="" placeholder="75000">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Pays :</label>
+            <input value="{{ address.country }}" type="text" name="country" class="form-control" id="" placeholder="name@example.com">
+        </div>
+        {% if address is defined %}
+            <button type="submit" class="btn btn-primary">Modifier</button>
+            <input type="hidden" name="id" value="{{ address.id }}">
+        {% else %}
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+            <input type="hidden" name="type" value="add">
+        {% endif %}
+    </form>
+{% endblock %}

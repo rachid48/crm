@@ -1,0 +1,31 @@
+{% extends 'templates/layout.twig' %}
+{% block content %}
+    <a href="index.php?p=contact.add" class="btn btn-primary">Ajouter un nouveau contact</a>
+    <p class="h4 mb-4">List des contacts</p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Email</th>
+            <th scope="col">Details</th>
+            <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+                <th scope="row">{{ contact.id }}</th>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.first_name }}</td>
+                <td>{{ contact.email }}</td>
+                <td><a href="index.php?p=contact.details&id={{ contact.id }}">Details</a></td>
+                <td><a href="index.php?p=contact.edit&id={{ contact.id }}">Modifier</a></td>
+                <td><a href="index.php?p=contact.delete&id={{ contact.id }}">Supprimer</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

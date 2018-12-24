@@ -1,0 +1,42 @@
+{#
+* Created by PhpStorm.
+* User: TOUHAMI Rachid
+* Email: r.touhami90@gmail.com
+* Website: rachidtouhami.com
+* Date: 21-Dec-18
+* Time: 6:58 PM
+#}
+{% extends 'templates/layout.twig' %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-6">
+            <!-- Default form login -->
+            <form class="text-center border border-light p-5" method="post" action="index.php?p=user.login">
+                <p class="h4 mb-4">Se connecter</p>
+                <input type="text" name="username" id="" class="form-control mb-4" placeholder="Login">
+                <!-- Password -->
+                <input type="password" name="password" id="defaultLoginFormPassword" class="form-control mb-4"
+                       placeholder="Password">
+                <!-- Sign in button -->
+                <button class="btn btn-info btn-block my-4" type="submit">Se connecter</button>
+            </form>
+            <!-- Default form login -->
+        </div>
+        <div class="col-lg-6">
+            <!-- Default form login -->
+            <form class="text-center border border-light p-5" method="post" action="index.php?p=user.create">
+                <p class="h4 mb-4">Creer votre compte</p>
+                <input type="text" name="login" id="" class="form-control mb-4" placeholder="Login">
+                <!-- Password -->
+                <input type="password" name="password" id="defaultLoginFormPassword" class="form-control mb-4"
+                       placeholder="Password">
+                <!-- Password -->
+                <input type="password" name="password2" id="defaultLoginFormPassword" class="form-control mb-4"
+                       placeholder="Password">
+                <!-- Sign in button -->
+                <button class="btn btn-info btn-block my-4" type="submit">S'enregister</button>
+            </form>
+            <!-- Default form login -->
+        </div>
+    </div>
+{% endblock %}
