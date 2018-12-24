@@ -16,7 +16,7 @@ use Core\Auth\DBAuth;
  * Class Controller
  * @package Core\Controller
  */
-class Controller
+abstract class Controller
 {
     /**
      * @var
@@ -30,6 +30,11 @@ class Controller
      * @var
      */
     protected $twig_instance;
+
+    /**
+     * @return mixed
+     */
+    abstract protected function index();
 
     /**
      * @param $view

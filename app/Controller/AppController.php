@@ -35,6 +35,11 @@ class AppController extends Controller
      */
     protected $formValidator;
 
+    public function index()
+    {
+        // TODO: Implement index() method.
+    }
+
     /**
      * AppController constructor.
      */

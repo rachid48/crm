@@ -97,12 +97,11 @@ class UserController extends AppController
     {
         $data = [];
         $messages = [];
-
         if( isset($_POST['login'] )){
 
             $login = $_POST['login'];
             $user = $this->user->findByLogin($login);
-            if(!is_null($user)){
+            if($user){
                 $messages[] = [
                     "text" => "Login déja utilisé",
                     "type" => "danger"

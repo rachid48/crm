@@ -1,6 +1,7 @@
 {% extends 'templates/layout.twig' %}
 {% block content %}
     <a href="index.php?p=contact.add" class="btn btn-primary">Ajouter un nouveau contact</a>
+    {% if contacts %}
     <p class="h4 mb-4">List des contacts</p>
     <table class="table">
         <thead>
@@ -28,4 +29,7 @@
         {% endfor %}
         </tbody>
     </table>
+    {% else %}
+        <p class="h4 mb-4">Aucun contact touver, vieullez ajouter un nouveau contact</p>
+    {% endif %}
 {% endblock %}

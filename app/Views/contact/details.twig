@@ -5,16 +5,19 @@
             <div class="row">
                 <ul>
                     <li><strong>Nom : </strong>{{ contact.name }}</li>
-                    <li><strong>Prénom :</strong>{{ contact.first_name }}</li>
+                    <li><strong>Prénom : </strong>{{ contact.first_name }}</li>
                     <li><strong>E-mail : </strong>{{ contact.email }}</li>
                 </ul>
             </div>
             <div class="row">
+                <br>
                 <div class="col">
                     <a href="index.php?p=address.create&id={{ contact.id }}" class="btn btn-primary">Ajouter une
                         nouvelle
                         adresse</a>
-                    {% if addresses is defined %}
+
+                    {% if addresses %}
+                        <br><br><br>
                         <p class="h4 mb-4">List des adresses :</p>
                         <table class="table">
                             <thead>
@@ -23,6 +26,7 @@
                                 <th scope="col">Adresse ligne</th>
                                 <th scope="col">Complement</th>
                                 <th scope="col">Ville</th>
+                                <th scope="col">Code postale</th>
                                 <th scope="col">Pays</th>
                                 <th scope="col">Modifier</th>
                                 <th scope="col">Supprimer</th>
@@ -35,6 +39,7 @@
                                     <td>{{ item.address_1 }}</td>
                                     <td>{{ item.address_2 }}</td>
                                     <td>{{ item.city }}</td>
+                                    <td>{{ item.zipcode }}</td>
                                     <td>{{ item.country }}</td>
                                     <td><a href="index.php?p=address.edit&id={{ item.id }}">Modifier</a></td>
                                     <td><a href="index.php?p=address.delete&id={{ item.id }}">Supprimer</a></td>
@@ -42,6 +47,8 @@
                             {% endfor %}
                             </tbody>
                         </table>
+                    {% else %}
+                        <p class="h4 mb-4">Aucune adresse touver, vieullez ajouter une nouvelle adresse</p>
                     {% endif %}
                 </div>
             </div>
